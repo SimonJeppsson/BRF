@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <title>BRF Styrelse</title>
+  <link rel="stylesheet" href="https://unpkg.com/primeng/resources/themes/saga-blue/theme.css">
+  <link rel="stylesheet" href="https://unpkg.com/primeng/resources/primeng.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/primeicons/primeicons.css">
+  <style>body{max-width:600px;margin:auto;padding-top:50px;}</style>
+</head>
+<body>
+  <h1 class="p-text-center">Hantera meddelanden</h1>
+  <form method="post" action="{{ url_for('board_send') }}" class="p-fluid">
+    <div class="p-field">
+      <textarea name="message" class="p-inputtextarea" placeholder="Skriv meddelande"></textarea>
+    </div>
+    <button class="p-button p-button-primary" type="submit">Skicka</button>
+  </form>
+  <ul class="p-mt-4">
+    {% for m in messages %}
+    <li>{{ m }}</li>
+    {% endfor %}
+  </ul>
+  <a class="p-button p-mt-3" href="{{ url_for('logout') }}">Logga ut</a>
+</body>
+</html>

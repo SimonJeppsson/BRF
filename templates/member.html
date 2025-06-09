@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <title>BRF Medlem</title>
+  <link rel="stylesheet" href="https://unpkg.com/primeng/resources/themes/saga-blue/theme.css">
+  <link rel="stylesheet" href="https://unpkg.com/primeng/resources/primeng.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/primeicons/primeicons.css">
+  <style>body{max-width:600px;margin:auto;padding-top:50px;}</style>
+</head>
+<body>
+  <h1 class="p-text-center">BRF information</h1>
+  <p>{{ info }}</p>
+  <a class="p-button" href="{{ url_for('logout') }}">Logga ut</a>
+</body>
+</html>
