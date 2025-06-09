@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <title>BRF Login</title>
+  <link rel="stylesheet" href="https://unpkg.com/primeng/resources/themes/saga-blue/theme.css">
+  <link rel="stylesheet" href="https://unpkg.com/primeng/resources/primeng.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/primeicons/primeicons.css">
+  <style>
+    body {max-width:400px;margin:auto;padding-top:50px;}
+  </style>
+</head>
+<body>
+  <h1 class="p-text-center">Logga in</h1>
+  {% if error %}
+  <div class="p-mb-3" style="color:red;">{{ error }}</div>
+  {% endif %}
+  <form method="post" action="{{ url_for('login') }}" class="p-fluid">
+    <div class="p-field">
+      <label for="username">Användarnamn</label>
+      <input id="username" class="p-inputtext" type="text" name="username" required>
+    </div>
+    <div class="p-field">
+      <label for="password">Lösenord</label>
+      <input id="password" class="p-inputtext" type="password" name="password" required>
+    </div>
+    <button class="p-button p-component p-button-primary" type="submit">Logga in</button>
+  </form>
+</body>
+</html>
